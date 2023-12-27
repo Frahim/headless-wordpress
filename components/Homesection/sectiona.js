@@ -14,7 +14,7 @@ export default async function Section() {
         <section className="heppeningNext sectionPadding">
             <div className="container">
                 <div className="commonTitle">
-                    <h2 className="m-0 py-4 text-center fs-36 fw-medium text-dark1">{"What's Happening Next?"}</h2>
+                    <h2 className="m-0 py-4 text-center fs-36 fw-medium text-dark1">{"Whats Happening Next?"}</h2>
                 </div>
 
                 <div className="happeningNextWrapper mt-5">
