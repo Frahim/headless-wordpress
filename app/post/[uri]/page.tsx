@@ -8,7 +8,12 @@ import Link from "next/link";
 
 import Latestpost from '@/components/Homesection/sectiona'
 
-async function getPost(uri) {
+interface Uri {
+    uri: string;
+    // Other properties if needed
+  }
+
+async function getPost(uri:Uri) {
     const query = `
   query GetPostByUri($uri: ID!) {
     post(id: $uri, idType: URI) {
@@ -27,8 +32,11 @@ async function getPost(uri) {
     const variables = {
         uri,
     };
-
-    const res = await fetch(process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT, {
+    const graphqlEndpoint = process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT;
+    if (!graphqlEndpoint) {
+        throw new Error("GraphQL endpoint is not defined in the environment variables.");
+      }
+    const res = await fetch(graphqlEndpoint, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -49,12 +57,17 @@ async function getPost(uri) {
     }
 }
 
-
-type Props = {
+interface Props {
+    params: {
+      postId: string;
+      uri: string; // Adjust the type according to your actual parameter
+    };
     searchParams: Record<string, string> | null | undefined;
-};
+    // Add other properties if needed
+  }
 
-export default async function PostDetails({ params, searchParams }: Props) {
+
+export default async function PostDetails({ params, searchParams }: Props ,) {
     const showModal = searchParams?.modal;
 
     const post = await getPost(params.uri);

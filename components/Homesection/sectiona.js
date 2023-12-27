@@ -1,9 +1,9 @@
 // components/Home.js
 
-import React from 'react';
-import getAllPosts from '../../Libary/getAllPosts';
-import Image from 'next/image';
-import Link from 'next/link';
+import React from "react";
+import getAllPosts from "../../Libary/getAllPosts";
+import Image from "next/image";
+import Link from "next/link";
 
 export default async function Section() {
     const allPosts = await getAllPosts()
@@ -21,13 +21,13 @@ export default async function Section() {
                     <div className="row">
                         {allPosts.map((item) => {
                              const postDate = new Date(item.date); // Assuming post.date is a valid date string
-                            if (item.categories == '3') {
-                                const formattedDate = postDate.toLocaleString('en-US', {
-                                    day: 'numeric',
-                                    month: 'short',
-                                    year: 'numeric',
-                                    hour: 'numeric',
-                                    minute: 'numeric',
+                            if (item.categories == "3") {
+                                const formattedDate = postDate.toLocaleString("en-US", {
+                                    day: "numeric",
+                                    month: "short",
+                                    year: "numeric",
+                                    hour: "numeric",
+                                    minute: "numeric",
                                     hour12: true,
                                   });
                                 return (
