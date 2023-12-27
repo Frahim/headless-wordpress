@@ -43,7 +43,7 @@ export default function footer() {
                                 <ul className="list-unstyled mb-0">
                                     <li className="mb-2"><span><Image src={social1} width={25} height={15} className="img-fluid pe-2" alt="social" /></span><Link href="#"> Facebook </Link> </li>
                                     <li className="mb-2"><span><Image src={social2} width={25} height={15}  className="img-fluid pe-2" alt="social" /></span><Link href="#"> Twitter </Link> </li>
-                                    <li className="mb-2"><span><Image src={social3}  width={25} height={15} className="img-fluid pe-2" alt="social" /></span><Link href="#"> Instagram </Link> </li>
+                                    <li className="mb-2"><span><Image src={social3} width={25} height={15} className="img-fluid pe-2" alt="social" /></span><Link href="#"> Instagram </Link> </li>
                                     <li className="mb-2"><span><Image src={social4} width={25} height={15}  className="img-fluid pe-2" alt="social" /></span><Link href="#"> LinkedIn </Link> </li>
 
                                 </ul>
