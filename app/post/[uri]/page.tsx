@@ -9,7 +9,7 @@ import Link from "next/link";
 import Latestpost from '@/components/Homesection/sectiona'
 
 interface Uri {
-    uri: string;
+    toString(): string
     // Other properties if needed
   }
 
@@ -60,7 +60,7 @@ async function getPost(uri:Uri) {
 interface Props {
     params: {
       postId: string;
-      uri: string; // Adjust the type according to your actual parameter
+      uri: number; // Adjust the type according to your actual parameter
     };
     searchParams: Record<string, string> | null | undefined;
     // Add other properties if needed
