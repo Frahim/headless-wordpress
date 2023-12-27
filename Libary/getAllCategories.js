@@ -6,7 +6,7 @@ export default async function getAllSection() {
 
   try {
     const res = await fetch(fullApiUrl);
-    console.log(res);
+    
 
     if (!res.ok) {
       throw new Error(`Error! Status: ${res.status}`);

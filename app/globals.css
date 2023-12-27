@@ -500,3 +500,16 @@ div#error-modal {
   line-height: 26px;
   color: #4d585f;
 }
+
+.catwraper a {
+  box-shadow: 0 18px 30px 0 rgba(0,19,69,0.10);
+  padding: 60px;
+}
+.catwraper:hover a{
+  background-color: #0a8270;
+ 
+}
+.catwraper:hover h5, .catwraper:hover  .readMore{  color:#fff !important;}
+.catwraper:hover  .readMore svg path{
+  fill: #fff;
+}

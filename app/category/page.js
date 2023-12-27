@@ -13,6 +13,7 @@ async function getCats() {
               id
               name
               uri
+              categoryId
             }
           }
         }
@@ -49,9 +50,9 @@ export default async function PostDetails() {
         <div className="happeningNextWrapper mt-5">
           <div className="row">
             {catdata.map((item) => (
-              <div key={item.id} className="col-xl-3">
-                <Link href={`/category/${item.slug}`} className="card border-0 text-decoration-none">
-                  <Image src={item.fimg_url} width={350} height={246} className="card-Image-top Image-fluid" alt="card" />
+              <div key={item.id} className="col-xl-6 my-5 catwraper">
+                <Link href={`/category/${item.node.categoryId}`} className="card border-0 text-decoration-none">
+               
                   <div className="card-body">
                     <h5 className="card-title fs-24 fw-medium lh-34 mt-3">  {item.node.name}</h5>
                     <div

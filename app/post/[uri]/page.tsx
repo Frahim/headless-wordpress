@@ -6,6 +6,8 @@ import Eye from '@/app/image/Eye.svg';
 import { BasicModal } from '@/components/sherModel';
 import Link from "next/link";
 
+import Latestpost from '@/components/Homesection/sectiona'
+
 async function getPost(uri) {
     const query = `
   query GetPostByUri($uri: ID!) {
@@ -148,7 +150,7 @@ export default async function PostDetails({ params, searchParams }: Props) {
             <div className="blog-details-main bg-gray3 py-4">
                 <div className="container">
                     <div className="row">
-                        <div className="col-xl-8 ff-inter">
+                        <div className="col-xl-12 ff-inter">
                             <div className="blog-content-wrapper">
                                 <div className="inner-wrapper border-bottom d-flex gap-4 py-4">
                                     <div className="blog-details-title w-25">
@@ -161,11 +163,11 @@ export default async function PostDetails({ params, searchParams }: Props) {
                             </div>
 
                         </div>
-                        <div className="col-xl-3 offset-1">
-                        </div>
+                        
                     </div>
                 </div>
             </div>
+            <Latestpost/>
 
         </>
 
