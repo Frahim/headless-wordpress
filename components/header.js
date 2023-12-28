@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import logo from '@/app/image/logo.svg'
-
 export default function header() {
     return (
         <>
@@ -55,17 +54,17 @@ export default function header() {
                             </button>
                         </div>
                         <ul id="menu" className="d-md-flex align-items-center justify-content-between m-0 p-0 gap-5 w-100">
-                            <li><Link href="/category/3" className=" ff-inter navLink">What's happening?</Link></li>
+                            <li><Link href="/category/whats-happening-next" className=" ff-inter navLink">What's happening?</Link></li>
                             <li>
-                                <Link href="/category/4" className="menuLink ff-inter navLink">Recommendations</Link>
+                                <Link href="/category/latest-recommendations" className="menuLink ff-inter navLink">Recommendations</Link>
                             </li>
                             <li className="d-none d-md-block">
                                 <Link href="/" className="logo">
                                     <Image src={logo} alt="img" className="img-fluid" width={119} height={66} />
                                 </Link>
                             </li>
-                            <li><Link href="/category/5" className="menuLink ff-inter navLink">Trading Post</Link></li>
-                            <li><Link href="/category/6" className="menuLink ff-inter navLink">Challenges</Link></li>
+                            <li><Link href="/category/most-trading-post" className="menuLink ff-inter navLink">Trading Post</Link></li>
+                            <li><Link href="/category/most-discussed-challenges" className="menuLink ff-inter navLink">Challenges</Link></li>
                         </ul>
                     </div>
                 </div>
