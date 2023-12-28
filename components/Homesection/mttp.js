@@ -103,8 +103,6 @@ export default async function Section() {
                             <Image src={smallStar} width={12} height={12} className="Image-fluid" alt="star" />
                               <span className=" text-dark2 fs-13 fw-medium ff-inter ps-1">4.8 (230 reviews)</span>
                             </div>
-
-
                           </div>
                           <Link href={`/post/${item.slug}`} className="blogTitle fs-24 fw-medium lh-34 text-dark1 ">{item.title.rendered}</Link>
                         </div>
