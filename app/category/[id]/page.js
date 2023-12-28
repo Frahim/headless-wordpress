@@ -8,6 +8,7 @@ import Image from 'next/image'
 export default async function page() {
   const params = useParams()
   const allPosts = await getAllPosts()
+  const allcat = await getAllCategory()
   return (
     <section className="heppeningNext sectionPadding">
             <div className="container">               
