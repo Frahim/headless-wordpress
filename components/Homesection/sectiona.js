@@ -1,15 +1,61 @@
 // components/Home.js
 
 import React from "react";
-import getAllPosts from "../../Libary/getAllPosts";
 import Image from "next/image";
 import Link from "next/link";
 
-export default async function Section() {
-    const allPosts = await getAllPosts()
-   
 
+async function getPosts() {
+    try {
+      const query = `
+      query MyQuery{
+        posts(where: { categoryName: "whats-happening-next" }) {
+          edges {
+            node {
+              id
+              title
+              slug
+              featuredImage {
+              node {
+                sourceUrl
+              }
+            }
+            }
+          }
+        }
+      }
+    `;
+      
   
+      const res = await fetch(process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query: query,          
+        }),
+      });
+  
+      if (!res.ok) {
+        throw new Error(`HTTP error! Status: ${res.status}`);
+      }
+  
+      const { data } = await res.json();
+  
+      return data.posts.edges.map((edge) => edge.node);
+  
+    } catch (error) {
+      console.error("Error fetching posts:", error);
+      return []; // Return an empty array or handle the error as needed
+    }
+  
+  }
+  
+
+export default async function Section() {
+    const allPosts = await getPosts()
+    
     return (
         <section className="heppeningNext sectionPadding">
             <div className="container">
@@ -20,8 +66,8 @@ export default async function Section() {
                 <div className="happeningNextWrapper mt-5">
                     <div className="row">
                         {allPosts.map((item) => {
-                             const postDate = new Date(item.date); // Assuming post.date is a valid date string
-                            if (item.categories == "3") {
+                             const postDate = new Date(item.date);                           
+                              // Assuming post.date is a valid date string                          
                                 const formattedDate = postDate.toLocaleString("en-US", {
                                     day: "numeric",
                                     month: "short",
@@ -33,8 +79,9 @@ export default async function Section() {
                                 return (
                                     <>
                                         <div key={item.id} className="col-xl-3">
+                                            <h2>{item.categories}</h2>
                                             <Link href={`/post/${item.slug}`} className="card border-0 text-decoration-none">
-                                                <Image src={item.fimg_url} width={350} height={246} className="card-Image-top Image-fluid" alt="card" />
+                                                <Image src={item.featuredImage.node.sourceUrl} width={350} height={246} className="card-Image-top Image-fluid" alt="card" />
                                                 <div className="card-body">
                                                     <div className="nextInfo d-flex align-items-center gap-2">
                                                         <p className="mb-0 nextInfoPra fs-13 fw-medium lh-22 text-dark2 ff-inter">{formattedDate}</p>
@@ -75,12 +122,12 @@ export default async function Section() {
 
                                     </>
                                 )
-                            }
+                           
                         })}
                         <div className="d-flex justify-content-center mt-5">
-                            <button
+                            <Link href="/category/whats-happening-next"
                                 className="commonBtn ff-inter bg-green discoverBtn text-uppercase ls-1 d-flex align-items-center justify-content-center text-white fs-12">
-                                    <span>{"Discover More"}</span></button>
+                                    <span>{"Discover More"}</span></Link>
                         </div>
                     </div>
                 </div>

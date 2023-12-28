@@ -43,7 +43,7 @@ a {
 }
 
 .bg-pink {
-  background-color: var(--pink)
+  background-color: #ffc9c9
 }
 
 .bg-lightGreen {
@@ -51,7 +51,7 @@ a {
 }
 
 .bg-narvik {
-  background-color: var(--narvik)
+  background-color:#f6f6f2
 }
 
 .text-green {
@@ -270,7 +270,7 @@ img.banner-bg-img {
   padding: 90px 0;
   position: relative;
   z-index: 9999;
-  background: #fff;
+ 
 }
 .container {
   --max-width: 1500px;
@@ -352,7 +352,7 @@ img.banner-bg-img {
   transition: 0.5s;
 }
 
-section.latestRecommendations {
+section.latestRecommendations, section.tranding-post, .heppeningNext  {
   position: relative;
   z-index: 99;
   background: #fff;
@@ -512,4 +512,18 @@ div#error-modal {
 .catwraper:hover h5, .catwraper:hover  .readMore{  color:#fff !important;}
 .catwraper:hover  .readMore svg path{
   fill: #fff;
+}
+
+.recommendationWrapper .recommemdationItem .offerShow {
+  height: 21px;
+  padding: 0 15px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.bg-yellow {
+  background-color:#fde90a
+}
+.text-red-dark {
+  color: #ff4e3e
 }

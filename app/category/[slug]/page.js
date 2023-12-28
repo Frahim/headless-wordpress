@@ -75,7 +75,7 @@ export default async function page({ params }) {
             <div className="row">
                 {catpost.map((item) => {
                      const postDate = new Date(item.date); // Assuming post.date is a valid date string
-                    if (item.categories ==  params.id ) {
+                  
                         const formattedDate = postDate.toLocaleString('en-US', {
                             day: 'numeric',
                             month: 'short',
@@ -129,7 +129,7 @@ export default async function page({ params }) {
 
                             </>
                         )
-                    }
+                   
                 })}
                
             </div>

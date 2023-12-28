@@ -1,7 +1,7 @@
 // components/Home.js
 
 import React from 'react';
-import getAllPosts from '../../Libary/getAllPosts';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import reader1 from '@/app/image/reader1.png';
@@ -10,12 +10,11 @@ import reader3 from '@/app/image/reader3.png';
 import smallStar from '@/app/image/smallStar.png'
 import Like from '@/app/image/Like.png'
 
-
 async function getPosts() {
     try {
       const query = `
       query MyQuery{
-        posts(where: { categoryName: "latest-recommendations" }) {
+        posts(where: { categoryName: "most-discussed-challenges" }) {
           edges {
             node {
               id
@@ -64,15 +63,16 @@ export default async function Section() {
     const allPosts = await getPosts()
 
     return (
-        <section className="latestRecommendations">
+        <section className="discussedChallenges bg-narvik sectionPadding">
             <div className="container">
                 <div className="commonTitle">
-                    <h2 className="m-0 py-4 text-center fs-36 fw-medium text-dark1">Latest Recommendations</h2>
+                    <h2 className="m-0 py-4 text-center fs-36 fw-medium text-dark1">Most Discussed Challenges</h2>
                 </div>
                 <div className="recommendationWrapper py-5">
                     <div className="row">
                         {allPosts.map((item) => {
-                            const postDate = new Date(item.date); // Assuming post.date is a valid date string                         
+                            const postDate = new Date(item.date); // Assuming post.date is a valid date string
+                       
                                 const formattedDate = postDate.toLocaleString('en-US', {
                                     day: 'numeric',
                                     month: 'short',
@@ -88,7 +88,7 @@ export default async function Section() {
                                                 <div className="blog-image ">
                                                     <Image src={item.featuredImage.node.sourceUrl} width={345} height={258} className="Image-fluid" alt="" />
                                                     <div className="categoryShow bg-lightGreen d-flex align-items-center justify-content-center fs-12 fw-semiBold text-dark1 text-uppercase ff-inter">
-                                                        Agriculture
+                                                       item.categories {item.categories}
                                                     </div>
                                                 </div>
                                                 <div className="blog-content d-flex flex-column justify-content-between ps-3">
@@ -142,7 +142,7 @@ export default async function Section() {
                            
                         })}
                         <div className="d-flex justify-content-center mt-5 c">
-                            <Link href="/category/latest-recommendations"
+                            <Link href="/category/most-discussed-challenges"
                                 className="commonBtn ff-inter bg-green discoverBtn text-uppercase ls-1 d-flex align-items-center justify-content-center text-white fs-12">
                                 <span>Discover More</span></Link>
                         </div>
