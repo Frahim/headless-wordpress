@@ -20,19 +20,21 @@ async function getCats() {
         }
     `;
 
-    const res = await fetch(process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT, {
-      method: "POST",
-      headers: {
-          "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-          query: query,
-      }),
-  });
+    const graphqlEndpoint = process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT;
 
-  const { data } = await res.json();
+    const res = await fetch(graphqlEndpoint, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            query: query,
+        }),
+    });
 
-  return data.categories.edges;
+    const { data } = await res.json();
+
+    return data.categories.edges;
 }
 
 
