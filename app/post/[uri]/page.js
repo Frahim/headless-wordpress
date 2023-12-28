@@ -6,14 +6,9 @@ import Eye from '@/app/image/Eye.svg';
 import { BasicModal } from '@/components/sherModel';
 import Link from "next/link";
 
-import Latestpost from '@/components/Homesection/sectiona'
+import Latestpost from '@/components/Homesection/sectiona';
 
-interface Uri {
-    toString(): string
-    // Other properties if needed
-  }
-
-async function getPost(uri:Uri) {
+async function getPost(uri) {
     const query = `
   query GetPostByUri($uri: ID!) {
     post(id: $uri, idType: URI) {
@@ -35,7 +30,7 @@ async function getPost(uri:Uri) {
     const graphqlEndpoint = process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT;
     if (!graphqlEndpoint) {
         throw new Error("GraphQL endpoint is not defined in the environment variables.");
-      }
+    }
     const res = await fetch(graphqlEndpoint, {
         method: "POST",
         headers: {
@@ -57,24 +52,12 @@ async function getPost(uri:Uri) {
     }
 }
 
-interface Props {
-    params: {
-      postId: string;
-      uri: number; // Adjust the type according to your actual parameter
-    };
-    searchParams: Record<string, string> | null | undefined;
-    // Add other properties if needed
-  }
-
-
-export default async function PostDetails({ params, searchParams }: Props ,) {
+async function PostDetails({ params, searchParams }) {
     const showModal = searchParams?.modal;
 
     const post = await getPost(params.uri);
 
-
     return (
-
         <>
             <div className="event-details-banner">
                 <div className="container">
@@ -180,10 +163,9 @@ export default async function PostDetails({ params, searchParams }: Props ,) {
                     </div>
                 </div>
             </div>
-            <Latestpost/>
-
+            <Latestpost />
         </>
-
-
     );
 }
+
+export default PostDetails;
