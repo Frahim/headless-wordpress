@@ -6,38 +6,35 @@ import Image from 'next/image';
 
 async function getCats() {
   const query = `
-    query GetCategoryEdges {
-        categories {
-          edges {
-            node {
-              id
-              name
-              uri
-              categoryId
+        query GetCategoryEdges {
+            categories {
+                edges {
+                    node {
+                        id
+                        name
+                        uri
+                        categoryId
+                    }
+                }
             }
-          }
         }
-      }
-      `;
+    `;
 
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT}?query=${encodeURIComponent(query)}`,
-    {
-      method: "get",
+    const res = await fetch(process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT, {
+      method: "POST",
       headers: {
-        "Content-Type": "application/json",
+          "Content-Type": "application/json",
       },
-      next: {
-        revalidate: 0,
-      },
-    }
-  );
+      body: JSON.stringify({
+          query: query,
+      }),
+  });
 
   const { data } = await res.json();
 
   return data.categories.edges;
-
 }
+
 
 export default async function PostDetails() {
   const catdata = await getCats();
