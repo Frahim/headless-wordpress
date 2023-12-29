@@ -77,7 +77,7 @@ export default async function Section() {
                   hour12: true,
                 });
                 return (
-                  <div className="col-xl-3">
+                  <div key={item.id} className="col-xl-3">
                     <div className="recommemdationItem position-relative">
                       <div className="blog-image ">
                       <Image src={item.featuredImage.node.sourceUrl} width={350} height={246} className="card-Image-top Image-fluid" alt="card" />
