@@ -109,8 +109,6 @@ export default async function Section() {
                         <div className="blogBottom py-2">
                           <p className="ff-inter fs-13 fw-medium text-dark2 mb-3">Posted by <span className="fw-bold">Charlie Henderson</span>
                           </p>
-
-
                           <Link href={`/post/${item.slug}`}
                             className="ff-inter readMoreCommon d-flex align-items-center justify-content-start text-dark3 text-decoration-none py-1 fs-12 fw-semiBold">
                             View Details
