@@ -26,6 +26,11 @@ async function getPosts() {
               }              
             }
             date
+            author {
+                node {          
+                  name
+                }
+              }
             }
           }
         }
@@ -94,10 +99,10 @@ export default async function Section() {
                                                 <div className="blog-content d-flex flex-column justify-content-between ps-3">
                                                     <div className="blogUpper">
                                                         <p className="ff-inter fs-13 fw-medium text-dark2 mb-1">{formattedDate}</p>
-                                                        <Link href={`/post/${item.slug}`} className="blogTitle fs-24 fw-medium lh-34 text-dark1 ">{item.title.rendered}</Link>
+                                                        <Link href={`/post/${item.slug}`} className="blogTitle fs-24 fw-medium lh-34 text-dark1 ">{item.title}</Link>
                                                     </div>
                                                     <div className="blogBottom">
-                                                        <p className="ff-inter fs-13 fw-medium text-dark2 mb-1">Posted by <span className="fw-bold">Charlie Henderson</span></p>
+                                                        <p className="ff-inter fs-13 fw-medium text-dark2 mb-1">Posted by <span className="fw-bold">{item.author.node.name}</span></p>
 
                                                         <div className="blog-info d-flex align-items-center gap-2 pb-3" >
                                                             <div className="blogReader d-flex align-items-center">

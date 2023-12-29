@@ -30,10 +30,10 @@ export default function footer() {
                             <div className="footer-widget mb-4 wow fadeInDown">
                                 <h6 className="text-white mb-4 fs-24 fw-semiBold">{"Explore"}</h6>
                                 <ul className="list-unstyled mb-0">
-                                    <li className="mb-2"><Link href="#">{"Whats happening?"}</Link> </li>
-                                    <li className="mb-2"><Link href="#">{"Recommendations"}</Link> </li>
-                                    <li className="mb-2"><Link href="#">{"Trading Post"}</Link> </li>
-                                    <li className="mb-2"><Link href="#">{"Challenges"}</Link> </li>
+                                    <li className="mb-2"><Link href="/category/whats-happening-next">{"Whats happening?"}</Link> </li>
+                                    <li className="mb-2"><Link href="/category/latest-recommendations">{"Recommendations"}</Link> </li>
+                                    <li className="mb-2"><Link href="/category/most-trading-post">{"Trading Post"}</Link> </li>
+                                    <li className="mb-2"><Link href="/category/most-discussed-challenges">{"Challenges"}</Link> </li>
                                 </ul>
                             </div>
                         </div>

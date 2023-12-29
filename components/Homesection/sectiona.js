@@ -20,6 +20,12 @@ async function getPosts() {
                 sourceUrl
               }
             }
+            date
+            author {
+              node {          
+                name
+              }
+            }
             }
           }
         }
@@ -103,7 +109,7 @@ export default async function Section() {
                                                         </div>
 
                                                     </div>
-                                                    <h5 className="card-title fs-24 fw-medium lh-34 mt-3">{item.title.rendered}</h5>
+                                                    <h5 className="card-title fs-24 fw-medium lh-34 mt-3">{item.title}</h5>
                                                     <p className="card-text fs-14 text-dark2 lh-22 ff-inter">{"642, R. Marquês Minas 3, Cascais, Portugal"}</p>
                                                     <div
                                                         className="ff-inter readMore d-flex align-items-center justify-content-start text-dark3 text-decoration-none py-1 fs-12 fw-semiBold">{"View Details"}

@@ -22,6 +22,11 @@ async function getPosts() {
             }              
           }
           date
+          author {
+            node {          
+              name
+            }
+          }
           }
         }
       }
@@ -104,10 +109,10 @@ export default async function Section() {
                               <span className=" text-dark2 fs-13 fw-medium ff-inter ps-1">4.8 (230 reviews)</span>
                             </div>
                           </div>
-                          <Link href={`/post/${item.slug}`} className="blogTitle fs-24 fw-medium lh-34 text-dark1 ">{item.title.rendered}</Link>
+                          <Link href={`/post/${item.slug}`} className="blogTitle fs-24 fw-medium lh-34 text-dark1 ">{item.title}</Link>
                         </div>
                         <div className="blogBottom py-2">
-                          <p className="ff-inter fs-13 fw-medium text-dark2 mb-3">Posted by <span className="fw-bold">Charlie Henderson</span>
+                          <p className="ff-inter fs-13 fw-medium text-dark2 mb-3">Posted by <span className="fw-bold">{item.author.node.name}</span>
                           </p>
                           <Link href={`/post/${item.slug}`}
                             className="ff-inter readMoreCommon d-flex align-items-center justify-content-start text-dark3 text-decoration-none py-1 fs-12 fw-semiBold">
