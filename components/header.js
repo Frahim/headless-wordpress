@@ -1,14 +1,17 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 import Link from 'next/link'
 import Image from 'next/image'
 import logo from '@/app/image/logo.svg'
-export default function header() {
+
+export default function Header() {
+
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
     const toggleMobileMenu = () => {
-        setMobileMenuOpen(!isMobileMenuOpen);
-      };
+    setMobileMenuOpen(!isMobileMenuOpen);
+  };
     
     return (
         <>
