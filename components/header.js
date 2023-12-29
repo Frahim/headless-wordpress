@@ -54,7 +54,7 @@ export default function header() {
                             </button>
                         </div>
                         <ul id="menu" className="d-md-flex align-items-center justify-content-between m-0 p-0 gap-5 w-100">
-                            <li><Link href="/category/whats-happening-next" className=" ff-inter navLink">What's happening?</Link></li>
+                            <li><Link href="/category/whats-happening-next" className=" ff-inter navLink">What&apos;s happening?</Link></li>
                             <li>
                                 <Link href="/category/latest-recommendations" className="menuLink ff-inter navLink">Recommendations</Link>
                             </li>
