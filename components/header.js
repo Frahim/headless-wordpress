@@ -1,8 +1,15 @@
+"use client"
 import React from 'react'
+import { useState } from 'react';
 import Link from 'next/link'
 import Image from 'next/image'
 import logo from '@/app/image/logo.svg'
 export default function header() {
+    const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const toggleMobileMenu = () => {
+        setMobileMenuOpen(!isMobileMenuOpen);
+      };
+    
     return (
         <>
         <div className="header py-2 bg-gray3">
@@ -25,11 +32,12 @@ export default function header() {
                 </div>
             </div>
         </div>
+
         <nav className="navigation py-3 py-md-4 bg-white">
             <div className="container">
                 <div className="nav-grid-container d-flex d-md-block align-items-center justify-content-between gap-3">
                     <button
-                        className="btn btn-menu-toggle btn-default d-flex d-md-none align-items-center justify-content-center">
+                        className="btn btn-menu-toggle btn-default d-flex d-md-none align-items-center justify-content-center" onClick={toggleMobileMenu}> 
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ff5f50" className="bi bi-list"
                             viewBox="0 0 16 16">
                             <path fillRule="evenodd"
@@ -39,8 +47,8 @@ export default function header() {
                     <Link href="/" className="brand-logo logo is-active-mobile d-md-none">
                         <Image src={logo}  alt="img" className="img-fluid" width={119} height={66}/>
                     </Link>
-                    <div className="navbar px-3 py-4 py-md-0 px-md-0">
-                        <div className="navbar-header d-flex d-md-none align-items-center justify-content-between mb-4">
+                    <div className={`navbar px-3 py-4 py-md-0 px-md-0 ${isMobileMenuOpen ? 'show' : ''}`}>
+                        {/* <div className="navbar-header d-flex d-md-none align-items-center justify-content-between mb-4">
                             <Link href="/" className="brand-logo logo is-active-mobile d-md-none">
                                 <Image src={logo} alt="img" className="img-fluid" width={119} height={66}/>
                             </Link>
@@ -52,7 +60,7 @@ export default function header() {
                                         d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
                                 </svg>
                             </button>
-                        </div>
+                        </div> */}
                         <ul id="menu" className="d-md-flex align-items-center justify-content-between m-0 p-0 gap-5 w-100">
                             <li><Link href="/category/whats-happening-next" className=" ff-inter navLink">What&apos;s happening?</Link></li>
                             <li>

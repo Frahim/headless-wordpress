@@ -18,11 +18,6 @@ async function getPosts(slug) {
             }
           }
           date
-          author {
-            node {          
-              name
-            }
-          }
           }
         }
       }
