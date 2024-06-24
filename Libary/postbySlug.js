@@ -7,7 +7,7 @@ export default async function getPostBySlug(slug) {
         }
 
         // Construct the full API URL
-        const fullApiUrl = `https://uiexpertz.com/globallife-wp/wp-json/wp/v2/posts?slug=${slug}`;
+        const fullApiUrl = `https://gblheadlesswp.uiexpertz.com/wp-json/wp/v2/posts?slug=${slug}`;
 
         const res = await fetch(fullApiUrl);
 
