@@ -2,7 +2,7 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 
 const client = new ApolloClient({
-  uri: 'https://uiexpertz.com/globallife-wp/graphql', // Replace with your GraphQL endpoint
+  uri: 'https://gblheadlesswp.uiexpertz.com/index.php?graphql', // Replace with your GraphQL endpoint
   cache: new InMemoryCache(),
 });
 
