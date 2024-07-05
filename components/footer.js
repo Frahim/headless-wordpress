@@ -18,8 +18,8 @@ export default function footer() {
                             <div className="footer-widget mb-4 wow fadeInDown">
                                 <h6 className="text-white mb-4 fs-24 fw-semiBold">{"Global Life"}</h6>
                                 <ul className="list-unstyled mb-0">
-                                    <li className="mb-2"><Link href="#">{"About"}</Link> </li>
-                                    <li className="mb-2"><Link href="#">{"career"}</Link> </li>
+                                    <li className="mb-2"><Link href="/pages/about-us">{"About"}</Link> </li>
+                                    <li className="mb-2"><Link href="/pages/career">{"career"}</Link> </li>
                                     <li className="mb-2"><Link href="#">{"Contact"}</Link> </li>
                                     <li className="mb-2"><Link href="#">{"Terms & Conditions"}</Link> </li>
                                     <li className="mb-2"><Link href="#">{"Privacy Policy"}</Link> </li>
