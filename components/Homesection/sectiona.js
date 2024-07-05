@@ -90,11 +90,11 @@ export default async function Section() {
                                                 <Image src={item.featuredImage.node.sourceUrl} width={350} height={246} className="card-Image-top Image-fluid" alt="card" />
                                                 <div className="card-body">
                                                     <div className="nextInfo d-flex align-items-center gap-2">
-                                                        <p className="mb-0 nextInfoPra fs-13 fw-medium lh-22 text-dark2 ff-inter">{formattedDate}</p>
+                                                        <p className="mb-0 nextInfoPra fs-12 fw-medium lh-22 text-dark2 ff-inter">{formattedDate}</p>
                                                         <svg width={1} height={16} viewBox="0 0 1 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <rect width={1} height={16} fill="#969EA3" />
                                                         </svg>
-                                                        <p className="mb-0 nextInfoPra fs-13 fw-medium lh-22 text-dark2 ff-inter">{"2 Attendees"}</p>
+                                                        <p className="mb-0 nextInfoPra fs-12 fw-medium lh-22 text-dark2 ff-inter">{"2 Attendees"}</p>
                                                         <svg width={1} height={16} viewBox="0 0 1 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <rect width={1} height={16} fill="#969EA3" />
                                                         </svg>
