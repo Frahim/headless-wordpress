@@ -219,8 +219,6 @@ img {
   transition: all 0.3s linear;
   z-index: 100;
 }
-
-
 .banner {
   position: relative;
   z-index: -1;
@@ -393,6 +391,12 @@ img.card-Image-top.Image-fluid {
   left: 12px;
 }
 
+.wc-25 {
+  width: 25% !important;
+}
+.wc-75{
+  width: 75% !important;
+}
 /* Footer*/
 
 .footer .footer-grid .footer-widget li>a {
@@ -572,6 +576,119 @@ div#error-modal {
   color: #ff4e3e
 }
 
+/* Contact Form*/
+form div {
+  flex: 0 0 48%;
+}
+
+form {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.form-left,
+.form-right {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-left input {
+  height: 48px;
+  padding: 10px 15px;
+  border-radius: 25px;
+}
+
+.form-right textarea {
+  padding: 10px 15px;
+  border-radius: 5px;
+  height: 105px;
+}
+
+.form-right button {
+  height: 48px;
+  border-radius: 25px;
+  background: #0a8270;
+  border-color: transparent;
+  color: #fff;
+  font-weight: 600;
+}
+
+.form-right button:hover {
+  background-color: #5c837d;
+}
+
+.coont-wrwp {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.iconwrap {
+  border: 2px solid #0a8270;
+  border-radius: 50%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 50px;
+}
+
+.itemcomon {
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 1px 3px 10px #efefef;
+  width: 100%;
+}
+
+.itemwrap {
+  display: flex;
+  margin-bottom: 60px;
+  gap: 15px;
+}
+
+.iconwrap svg {
+  font-size: 22px;
+  color: #0a8270;
+}
+
+div#message {
+  padding: 15px 20px;
+  text-align: center;
+  color: #0a8270;
+  margin-top: 5px;
+  display: block;
+  margin: 25px auto;
+  width: 300px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.cta-item a {
+  color: #0a8270;
+}
+
+.iconwrap:hover .cta-item a,
+.cta-item a:hover {
+  color: #01312a;
+}
+
+.iconwrap:hover {
+  background: #efefef;
+}
+
+.readMore:hover {
+  color: #0a8270;
+}
+
+.nocontent {
+  padding: 60px 0;
+  text-align: center;
+  font-size: 28px;
+}
+.bt-none{border-top: none !important;}
 @media screen and (max-width:768px) {
   .header {
     display: none;
@@ -612,4 +729,28 @@ div#error-modal {
   section.banner {
     padding: 100px 0;
   }
-}
+
+  .blog-image img,
+  .recommendationWrapper .recommemdationItem .blog-image {
+    width: 100%;
+    max-width: 100% !important;
+  }
+
+  .d-flex {
+    flex-wrap: wrap;
+  }
+
+  .event-details {
+    display: grid;
+    grid-template-columns: auto;
+  }
+
+  .event-details-right {
+    margin: 20px auto;
+  }
+
+  .wc-25,
+  .wc-75 {
+    width: 100% !important;
+  }
+} 

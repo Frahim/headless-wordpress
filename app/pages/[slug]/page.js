@@ -59,28 +59,28 @@ export default async function Page({ params }) {
         return <div>Loading...</div>;
     }
     if (!page.content) {
-        return <div>No content available for this page.</div>;
+        return <div className='nocontent'>No content available for this page.</div>;
     }
 
     return (
         <>
             <div className="container">
-                <div className="commonTitle">
+                <div className="commonTitle bt-none">
                     <h2 className="m-0 py-4 text-center fs-36 fw-medium text-dark1">{formatSlugAsTitle(slug)}</h2>
                 </div>
             </div >
             <section className="heppeningNext mb-5">
-                <div className="container">                    
+                <div className="container">
                     <div className="happeningNextWrapper mt-5">
                         <div className="row justify-content-center">
-                        <div className='col-xl-12 col-md-12 mb-5'>
+                            <div className='col-xl-12 col-md-12 mb-5'>
                                 <Image src={page.featuredImage.node.mediaItemUrl} width={450} height={450} className="card-Image-top Image-fluid" alt="card" />
                             </div>
-                         
+
                             <div className="col-xl-8 col-md-12 ">
                                 <div dangerouslySetInnerHTML={{ __html: page.content }} />
                             </div>
-                          
+
                         </div>
                     </div>
                 </div>

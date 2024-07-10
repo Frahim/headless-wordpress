@@ -149,10 +149,10 @@ async function PostDetails({ params, searchParams }) {
                         <div className="col-xl-12 ff-inter">
                             <div className="blog-content-wrapper">
                                 <div className="inner-wrapper border-bottom d-flex gap-4 py-4">
-                                    <div className="blog-details-title w-25">
+                                    <div className="blog-details-title wc-25">
                                         <h3 className="fs-4 fw-bold text-dark1">About this Post</h3>
                                     </div>
-                                    <div className="blog-details-pra w-75">
+                                    <div className="blog-details-pra wc-75">
                                         <div className="contentstyle" dangerouslySetInnerHTML={{__html: post.content }}/>
                                     </div>
                                 </div>

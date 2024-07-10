@@ -1,11 +1,8 @@
-import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import social1 from '@/app/image/social1.svg'
-import social2 from '@/app/image/social2.svg'
-import social3 from '@/app/image/social3.svg'
-import social4 from '@/app/image/social4.svg'
 
+import React from 'react'
+import Link from 'next/link'
+
+import SocialModel from '../components/socialComponent'
 
 export default function footer() {
     return (
@@ -20,9 +17,9 @@ export default function footer() {
                                 <ul className="list-unstyled mb-0">
                                     <li className="mb-2"><Link href="/pages/about-us">{"About"}</Link> </li>
                                     <li className="mb-2"><Link href="/pages/career">{"career"}</Link> </li>
-                                    <li className="mb-2"><Link href="#">{"Contact"}</Link> </li>
-                                    <li className="mb-2"><Link href="#">{"Terms & Conditions"}</Link> </li>
-                                    <li className="mb-2"><Link href="#">{"Privacy Policy"}</Link> </li>
+                                    <li className="mb-2"><Link href="/contact">{"Contact"}</Link> </li>
+                                    <li className="mb-2"><Link href="/pages/terms-conditions">{"Terms & Conditions"}</Link> </li>
+                                    <li className="mb-2"><Link href="/pages/privacy-policy">{"Privacy Policy"}</Link> </li>
                                 </ul>
                             </div>
                         </div>
@@ -40,13 +37,14 @@ export default function footer() {
                         <div className="col-6 col-xl-3 col-md-4 grid-item">
                             <div className="footer-widget mb-4 wow fadeInDown">
                                 <h6 className="text-white mb-4 fs-24 fw-semiBold">{"Stay Connected"}</h6>
-                                <ul className="list-unstyled mb-0">
+                                <SocialModel/>
+                                {/* <ul className="list-unstyled mb-0">
                                     <li className="mb-2"><span><Image src={social1} width={25} height={15} className="img-fluid pe-2" alt="social" /></span><Link href="#">{"Facebook"}  </Link> </li>
                                     <li className="mb-2"><span><Image src={social2} width={25} height={15}  className="img-fluid pe-2" alt="social" /></span><Link href="#">{"Twitter"}  </Link> </li>
                                     <li className="mb-2"><span><Image src={social3} width={25} height={15} className="img-fluid pe-2" alt="social" /></span><Link href="#">{"Instagram"}  </Link> </li>
                                     <li className="mb-2"><span><Image src={social4} width={25} height={15}  className="img-fluid pe-2" alt="social" /></span><Link href="#">{"LinkedIn"}  </Link> </li>
-
-                                </ul>
+                                </ul> */}
+                               
                             </div>
                         </div>
                         <div className="col-6 col-xl-3 col-md-4 grid-item">
