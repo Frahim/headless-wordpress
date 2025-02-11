@@ -88,7 +88,7 @@ export default async function Section() {
                                 });
                                 return (
                                     <>
-                                        <div key={item.id} className="col-xl-6 py-3">
+                                        <div key={item.id} className="col-xl-6 py-3"> 
                                             <div className="recommemdationItem d-flex position-relative">
                                                 <div className="blog-image ">
                                                     <Image src={item.featuredImage.node.sourceUrl} width={345} height={258} className="Image-fluid" alt="" />

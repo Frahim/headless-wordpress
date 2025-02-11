@@ -3,7 +3,7 @@ const { parse } = require('url')
 const next = require('next')
  
 const dev = process.env.NODE_ENV !== 'production'
-const hostname = process.env.NODE_ENV !== "production" ? 'localhost' :'gblheadlesswp.uiexpertz.com'
+const hostname = process.env.NODE_ENV !== "production" ? 'localhost' :'gblheadlesswp.enamahamed.site'
 const port = process.env.PORT || 4789
 // when using middleware `hostname` and `port` must be provided below
 const app = next({ dev, hostname, port })

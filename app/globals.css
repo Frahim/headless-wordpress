@@ -754,3 +754,27 @@ div#message {
     width: 100% !important;
   }
 } 
+
+a.blogTitle, .card-title{
+  transition: all 0.2s;
+
+}
+.recommemdationItem{
+  transition: all 0.2s;
+  overflow: hidden;
+}
+.recommemdationItem:hover a.blogTitle, .recommemdationItem:hover .card-title{
+  color: #0a8270 !important;
+}
+.recommemdationItem img{
+  transform: scale(1);
+  transition: all 0.2s;
+}
+.recommemdationItem:hover img{
+  transform: scale(1.1);
+}
+.recommemdationItem .blog-image{
+  max-height: 246px;
+  overflow: hidden;
+
+}

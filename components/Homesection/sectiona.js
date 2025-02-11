@@ -85,9 +85,12 @@ export default async function Section() {
                                 return (
                                     <>
                                         <div key={item.id} className="col-xl-3">
-                                            <h2>{item.categories}</h2>
+                                            {/* <h2>{item.categories}</h2> */}
+                                            <div className="recommemdationItem d-flex position-relative">
                                             <Link href={`/post/${item.slug}`} className="card border-0 text-decoration-none">
+                                            <div className="blog-image ">
                                                 <Image src={item.featuredImage.node.sourceUrl} width={350} height={246} className="card-Image-top Image-fluid" alt="card" />
+                                               </div>
                                                 <div className="card-body">
                                                     <div className="nextInfo d-flex align-items-center gap-2">
                                                         <p className="mb-0 nextInfoPra fs-12 fw-medium lh-22 text-dark2 ff-inter">{formattedDate}</p>
@@ -123,6 +126,7 @@ export default async function Section() {
                                                     </div>
                                                 </div>
                                             </Link>
+                                            </div>
                                         </div>
 
 

@@ -29,8 +29,8 @@ export default function Header() {
                                 fill="white" /> </svg></span></Link>
                     </div>
                     <div className="grid-item d-flex align-items-center justify-content-center justify-content-sm-end gap-3">
-                        <Link href="/" className="fs-12 fw-semiBold text-dark1 ff-inter text-uppercase text-decoration-none">Login</Link>
-                        <Link href="/" className="fs-12 fw-semiBold text-dark1 ff-inter text-uppercase text-decoration-none">Apply</Link>
+                        {/* <Link href="/" className="fs-12 fw-semiBold text-dark1 ff-inter text-uppercase text-decoration-none">Login</Link>
+                        <Link href="/" className="fs-12 fw-semiBold text-dark1 ff-inter text-uppercase text-decoration-none">Apply</Link> */}
                     </div>
                 </div>
             </div>
