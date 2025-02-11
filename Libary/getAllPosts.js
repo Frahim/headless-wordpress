@@ -2,7 +2,7 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
 export default async function getAllPosts() {
   // Construct the full API URL
-  const fullApiUrl = `${apiUrl}/wp-json/wp/v2/posts`;
+  const fullApiUrl = `https://gblheadlesswp.enamahamed.site/wp-json/wp/v2/posts`;
 
   try {
     const res = await fetch(fullApiUrl);

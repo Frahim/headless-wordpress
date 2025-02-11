@@ -2,7 +2,7 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
 export default async function getAllThemeOption() {
   // Construct the full API URL
-  const fullApiUrl = `${apiUrl}/wp-json/custom-fields/theme_options`;
+  const fullApiUrl = `https://gblheadlesswp.enamahamed.site/wp-json/custom-fields/theme_options`;
 
   try {
     const res = await fetch(fullApiUrl);
