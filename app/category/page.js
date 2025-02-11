@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+
 
 async function getCats() {
   const query = `
@@ -51,8 +51,7 @@ export default async function PostDetails() {
           <div className="row">
             {catdata.map((item) => (
               <div key={item.node.id} className="col-xl-6 my-5 catwraper">
-                <Link href={`/category/${item.node.slug}`} className="card border-0 text-decoration-none">
-               
+                <Link href={`/category/${item.node.slug}`} className="card border-0 text-decoration-none">               
                   <div className="card-body">
                     <h5 className="card-title fs-24 fw-medium lh-34 mt-3">  {item.node.name}</h5>
                     <div
